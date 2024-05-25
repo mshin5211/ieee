@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    * {
+      @apply border-0 m-0 box-border !scroll-smooth;
+    }
+    button {
+      @apply active:outline-none;
+    }
+  }
+  
+#heroImg {
+  border-image-source: linear-gradient(rgba(32, 64, 151, 0.7), rgba(255, 95, 5, 0.5));
+  border-image-slice: fill 1;
+}
