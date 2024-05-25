@@ -25,6 +25,7 @@ const config: Config = {
       },
       animation: {
         spotlight: "spotlight 2s ease .75s 1 forwards",
+        popup: "popup 0.75s ease 1 forwards",
       },
       keyframes: {
         spotlight: {
@@ -35,6 +36,16 @@ const config: Config = {
           "100%": {
             opacity: '1',
             transform: "translate(-50%,-40%) scale(1)",
+          },
+        },
+        popup: {
+          "0%": {
+            opacity: '0',
+            transform: "scale(0.75)",
+          },
+          "100%": {
+            opacity: '1',
+            transform: "scale(1)",
           },
         },
       },

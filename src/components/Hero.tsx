@@ -1,8 +1,14 @@
+"use client";
 import React from 'react'
 import { Spotlight } from './ui/Spotlight'
 import { TextGenerateEffect } from './ui/TextGenerateEffect'
+import Modal from './Modal'
+import { useState } from 'react'
 
 const Hero = () => {
+
+    const [showModal, setShowModal] = React.useState(false);
+   
   return (
     <header>
         <div className='opacity-0 md:opacity-100'>
@@ -13,7 +19,7 @@ const Hero = () => {
             <Spotlight className="top-28 left-80 h-[80vh] w-[50vw]" 
             fill="blue" />
         </div>
-        <div id='heroImg' className='w-full h-screen dark:brightness-50 brightness-90 bg-[url("../images/quad.jpg")] md:bg-cover flex items-center justify-center absolute top-0 left-0'>
+        <div id='heroImg' className='w-full h-screen max-h-[800px] dark:brightness-50 brightness-90 bg-[url("../images/quad.jpg")] md:bg-cover flex items-center justify-center absolute top-0 left-0'>
         </div>
 
         <div className="flex justify-center relative my-64 z-10">
@@ -32,8 +38,19 @@ const Hero = () => {
                 md:text-lg lg:text-2xl text-orange-100">
                     Join us for tech talks, info sessions, luncheons, workshops, and socials!
                 </p>
-                
-                
+                <div className='flex flex-col md:flex-row justify-center items-center gap-3'>
+                    <a>
+                        <button className="bg-[#FF5F0F] border border-white/[0.2] focus:ring-1 ring-white bg-opacity-50 backdrop-blur-sm hover:bg-opacity-100 hover:bg-orange-500 text-white font-bold py-2 px-4 rounded-md">
+                            Learn More
+                        </button>
+                    </a>
+                    <a>
+                        <button onClick={() => setShowModal(true)}className="bg-[#0455A4] focus:ring-1 ring-white border border-white/[0.7] bg-opacity-80 backdrop-blur-sm hover:bg-blue-500 hover:bg-opacity-100 text-white font-bold py-2 px-4 rounded-md">
+                            Join Us
+                        </button>
+                    </a>
+                </div>
+                {showModal && <Modal handleClick={() => setShowModal(false)}/>}
             </div>
         </div>
   
