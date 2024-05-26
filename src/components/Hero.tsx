@@ -11,7 +11,7 @@ const Hero = () => {
     const [showModal, setShowModal] = React.useState(false);
    
   return (
-    <header id='heroImg' className='w-screen h-screen max-h-[800px] dark:bg-[url("../images/quadDark.jpg")] bg-[url("../images/quadLight.jpg")] md:bg-cover flex items-center justify-center'>
+    <header id='heroImg' className='w-screen h-screen max-h-[800px] dark:bg-[url("../images/quadDark.jpg")] bg-[url("../images/quad.jpg")] md:bg-cover flex items-center justify-center'>
         <div className='opacity-0 md:opacity-100'>
             <Spotlight className="-top-40 -left-10 
             md:-left-32 md:-top-20 h-screen" fill="white" />
@@ -22,14 +22,14 @@ const Hero = () => {
         </div>
        
         <div className="flex justify-center relative my-60 z-10">
-            <div className="max-w-[80vw] md:max-w-2xl lg:max-w-[80vw] flex flex-col
+            <div className="max-w-[80vw] md:max-w-2xl lg:max-w-[70vw] xl:max-w-[80vw] flex flex-col
             items-center justify-center flex-wrap gap-y-4">
                 <h2 className='uppercase tracking-widest text-xs 
                 text-center text-blue-100 max-w-80'>
                     Write something here
                 </h2>
                 <TextGenerateEffect 
-                    className='text-center text-[40px] md:text-5xl lg:text-6xl '
+                    className='text-center text-[40px] md:text-5xl xl:text-6xl '
                     words='IEEE at the University of Illinois'>
                 </TextGenerateEffect>
                 
