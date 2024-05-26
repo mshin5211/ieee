@@ -4,13 +4,14 @@ import { Spotlight } from './ui/Spotlight'
 import { TextGenerateEffect } from './ui/TextGenerateEffect'
 import Modal from './Modal'
 import { useState } from 'react'
+import { ThemeProvider } from './theme-provider';
 
 const Hero = () => {
 
     const [showModal, setShowModal] = React.useState(false);
    
   return (
-    <header>
+    <header id='heroImg' className='w-screen h-screen max-h-[800px] dark:bg-[url("../images/quadDark.jpg")] bg-[url("../images/quadLight.jpg")] md:bg-cover flex items-center justify-center'>
         <div className='opacity-0 md:opacity-100'>
             <Spotlight className="-top-40 -left-10 
             md:-left-32 md:-top-20 h-screen" fill="white" />
@@ -19,12 +20,10 @@ const Hero = () => {
             <Spotlight className="top-28 left-80 h-[80vh] w-[50vw]" 
             fill="blue" />
         </div>
-        <div id='heroImg' className='w-full h-screen max-h-[800px] dark:brightness-50 brightness-90 bg-[url("../images/quad.jpg")] md:bg-cover flex items-center justify-center absolute top-0 left-0'>
-        </div>
-
-        <div className="flex justify-center relative my-64 z-10">
+       
+        <div className="flex justify-center relative my-60 z-10">
             <div className="max-w-[80vw] md:max-w-2xl lg:max-w-[80vw] flex flex-col
-            items-center justify-center flex-wrap">
+            items-center justify-center flex-wrap gap-y-4">
                 <h2 className='uppercase tracking-widest text-xs 
                 text-center text-blue-100 max-w-80'>
                     Write something here

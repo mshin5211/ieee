@@ -29,7 +29,7 @@ function Nav({ className }: { className?: string }) {
   const isContactActive = pathname.startsWith("/contact") ? true : false;
   return (
     <div
-      className={cn("fixed top-10 inset-x-0 max-w-sm lg:max-w-lg mx-auto z-50 ", className)}
+      className={cn("fixed top-10 inset-x-0 max-w-xs sm:max-w-sm lg:max-w-lg mx-auto z-50 ", className)}
     >
       <Menu setActive={setActive}>
         <MenuItem setActive={setActive} active={isHome} item="Home" isActive={isHomeActive}>
