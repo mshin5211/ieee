@@ -1,9 +1,8 @@
 import React from 'react';
-import Image from 'next/image';
 
 const Overview = () => {
   return (
-    <div id='overview' className='grid grid-cols-1 md:grid-cols-1 justify-items-center content-center gap-5 mt-10'>
+    <div className='text-slideIn grid grid-cols-1 md:grid-cols-1 justify-items-center content-center gap-5 mt-10'>
         <div className='flex flex-col justify-between items-center'>
             <h1 className='text-lg md:text-3xl font-bold'>
                 Overview
@@ -13,10 +12,6 @@ const Overview = () => {
             </p>
             <div></div>
         </div>
-        {/* <div className='flex md:justify-end justify-center items-center w-full'>
-            <Image src='/images/quad.jpg' alt='quad' width={600} height={600} />
-        </div>
-        */}
 
     </div>
   )

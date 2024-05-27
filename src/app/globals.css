@@ -15,3 +15,48 @@
   border-image-source: linear-gradient(rgba(32, 64, 151, 0.7), rgba(255, 95, 5, 0.5));
   border-image-slice: fill 1;
 }
+
+@media (prefers-reduced-motion: no-preference) {
+  .text-slideIn {
+    animation: slide-in linear forwards;
+    animation-timeline: view();
+    /* animation-range-start: -200px;
+    animation-range-end: 400px; */
+    animation-range: entry -200px;
+    animation-iteration-count: 1;
+    opacity: 0;
+  }
+  #branchImg {
+    animation: pop-in linear forwards;
+    animation-timeline: view();
+    /* animation-range-start: -200px;
+    animation-range-end: 400px; */
+    animation-range: entry -200px;
+    animation-iteration-count: 1;
+    transform: scale(0.3);
+    opacity: 0;
+  }
+}
+
+
+@keyframes pop-in {
+  from {
+    transform: scale(0.3);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(300px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
