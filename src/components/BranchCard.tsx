@@ -7,7 +7,7 @@ const BranchCard = ({ title, description, src }: {
 }) => {
   return (
     <div className='w-full flex justify-center items-center flex-col'>
-            <div className='w-full xl:w-[70%] max-md:w-[70%] rounded-full aspect-square relative flex justify-center items-center bg-[url("../images/quadDark.jpg")] border-orange-200 border-4'>
+            <div className='w-full xl:w-[70%] max-md:w-[70%] rounded-full aspect-square relative flex justify-center items-center bg-[url("../images/quadDark.jpg")] dark:border-[#E8E9EA] border-[#FF5F0F] border-4'>
                 <div className='place-self-center place-content-center p-5'>
                     <h1 className='text-white font-bold text-md text-wrap lg:text-xl text-center'>{title}</h1>
                 </div>

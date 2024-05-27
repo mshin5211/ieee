@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 const Overview = () => {
   return (
-    <div className='grid grid-cols-1 md:grid-cols-1 justify-items-center content-center gap-5 mt-10'>
+    <div id='overview' className='grid grid-cols-1 md:grid-cols-1 justify-items-center content-center gap-5 mt-10'>
         <div className='flex flex-col justify-between items-center'>
             <h1 className='text-lg md:text-3xl font-bold'>
                 Overview

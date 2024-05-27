@@ -1,5 +1,7 @@
 import Branch from "@/components/Branch";
+import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
+import Mission from "@/components/Mission";
 import Overview from "@/components/Overview";
 
 export default function Home() {
@@ -9,6 +11,8 @@ export default function Home() {
       <Hero />
       <Overview />
       <Branch />
+      <Mission />
+      <Footer />
     </main>
   );
 }
