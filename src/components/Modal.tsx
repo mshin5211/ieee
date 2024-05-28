@@ -18,7 +18,7 @@ const handleSubmit = (e: React.FormEvent) => {
     alert('Subscribed!');
 }
   return (
-    <div ref={modalRef} onClick={closeModal} className='fixed inset-0 bg-black bg-opacity-30 backdrop-blur-sm flex justify-center items-center'>
+    <div ref={modalRef} onClick={closeModal} className='fixed inset-0 bg-black bg-opacity-30 backdrop-blur-sm flex justify-center items-center z-50'>
          <div className='animate-popup md:max-w-[60vw] max-w-[80vw] rounded-lg bg-dark px-10 py-10 gap-y-5 text-white flex flex-col gap-5'>
             <div className='flex w-full justify-center flex-col'>
                 <h1 className='text-3xl font-bold'>Join our newsletter~</h1>

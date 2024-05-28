@@ -1,3 +1,4 @@
+import Announcement from "@/components/Announcement";
 import Branch from "@/components/Branch";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
@@ -9,6 +10,7 @@ export default function Home() {
     <main className='relative flex justify-center items-center
     flex-col mx-auto sm:px-10 px-5 overflow-clip gap-y-5 dark:bg-dark'>
       <Hero />
+      <Announcement />
       <Overview />
       <Branch />
       <Mission />

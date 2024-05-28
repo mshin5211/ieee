@@ -5,7 +5,7 @@ import Modal from './Modal'
 const Mission = () => {
   const [showModal, setShowModal] = React.useState(false);
   return (
-  
+    <>
         <div className='text-slideIn grid grid-cols-1 md:grid-cols-1 justify-items-center content-center gap-5 mt-10'>
             <div className='flex flex-col justify-between items-center'>
                 <h1 className='text-lg md:text-3xl font-bold'>
@@ -19,7 +19,7 @@ const Mission = () => {
                     <button onClick={() => setShowModal(true)} className="bg-[#FF5F0F] focus:ring-1 ring-white border border-white/[0.7] bg-opacity-80 backdrop-blur-sm hover:bg-orange-500 hover:bg-opacity-100 text-white font-bold py-2 px-4 rounded-md">
                         Join Mailing List
                     </button>
-                    {showModal && <Modal handleClick={() => setShowModal(false)}/>}
+                    
 
                     <button className='bg-[#0455A4] focus:ring-1 ring-white border border-white/[0.7] bg-opacity-80 backdrop-blur-sm hover:bg-blue-500 hover:bg-opacity-100 text-white font-bold py-2 px-4 rounded-md'>
                         Join Discord
@@ -27,8 +27,12 @@ const Mission = () => {
 
                     
                 </div>
+                
             </div>
+            
         </div>
+        {showModal && <Modal handleClick={() => setShowModal(false)}/>}
+        </>
     
    
     

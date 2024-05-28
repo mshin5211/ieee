@@ -16,6 +16,38 @@
   border-image-slice: fill 1;
 }
 
+
+/* #dayCard {
+  transition-property: display transform;
+  transition-behavior: allow-discrete;
+  transition-duration: 0.5s;
+  transition-timing-function: ease-in-out;
+  transform-origin: top;
+}
+
+
+.dayCard-open {
+
+  display: block;
+  transform: scaleY(1);
+
+  @starting-style {
+    display: hidden;
+    transform: scaleY(0);
+  }
+}
+
+.dayCard-close {
+  display: hidden;
+  transform: scaleY(0);
+
+  @starting-style {
+    display: block;
+    transform: scaleY(1);
+  }
+
+} */
+
 @media (prefers-reduced-motion: no-preference) {
   .text-slideIn {
     animation: slide-in linear forwards;

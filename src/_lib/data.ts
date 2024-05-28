@@ -73,3 +73,138 @@ export const branchData = [
         description: 'The membership/social branch focuses on building a vibrant community by organizing social events, networking opportunities, and fostering connections among its members.'
     }
 ]
+
+export const announcementData = [
+    {
+        id: 1,
+        title: 'Pizza Night!',
+        date: 'Next Thursday'
+    },
+    {
+        id: 2,
+        title: 'SolidWorks Workshop!',
+        date: 'Thursday'
+    },
+    {
+        id: 3,
+        title: 'EOH 2024!',
+        date: 'Friday & Saturday'
+    }
+
+]
+
+export const dailyAnnouncementData = [
+    {
+        id: 1,
+        date: 'Monday - 04/01',
+        events: [
+            {
+                id: 1,
+                title: 'Capacitive Power Transfer',
+                detail: '3pm - ECEB 4070',
+                linkText: 'details',
+                href: ''
+            }
+        ]
+    },
+    {
+        id: 2,
+        date: 'Tuesday - 04/02',
+        events: [
+            {
+                id: 1,
+                title: 'Perseus’ Mirrored Shield: Enhancing System Robustness and Privacy Through Insights from Cyber Threat Intelligence',
+                detail: '10am - Zoom',
+                linkText: 'details',
+                href: ''
+            },
+            {
+                id: 2,
+                title: 'Study Hours with Snacks',
+                detail: '7~8pm - ECEB 2036',
+                linkText: '',
+                href: ''
+            }
+        ]
+    },
+    {
+        id: 3,
+        date: 'Wednesday - 04/03',
+        events: [ 
+            {
+                id: 1,
+                title: 'Counseling Center Services: Supporting Engineering Students&apo; Mental Health and Well-Being',
+                detail: '5pm - ECEB 1002',
+                linkText: 'details',
+                href: ''
+            }
+        ]
+    },
+    {
+        id: 4,
+        date: 'Thursday - 04/04',
+        events: [
+            {
+                id: 1,
+                title: 'Unconventional Applications of Atomic Materials from Non-volatile Electronics to Wearable Health and Sensors',
+                detail: '4~5pm - ECEB 1002',
+                linkText: 'details',
+                href: ''
+            },
+            {
+                id: 2,
+                title: 'IEEE SolidWorks Workshop',
+                detail: '5~7pm - ECEB 2015',
+                linkText: 'RVSP',
+                href: ''
+            }
+        ]
+    },
+    {
+        id: 5,
+        date: 'Friday - 04/05',
+        events: [
+            {
+                id: 1,
+                title: 'Engineering Open House 2024',
+                detail: '',
+                linkText: 'schedule',
+                href: ''
+            },
+            {
+                id: 2,
+                title: 'Tesla Coil Concert ⚡',
+                detail: '8:30~9:30pm - Bardeen Quad',
+                linkText: '',
+                href: ''
+            }
+        ]
+    },
+    {
+        id: 6,
+        date: 'Saturday - 04/06',
+        events: [
+            {
+                id: 1,
+                title: 'Engineering Open House 2024',
+                detail: '',
+                linkText: 'schedule',
+                href: ''
+            },
+            {
+                id: 2,
+                title: 'Burns & McDonnell Tech Talk "Grid to the Future"',
+                detail: '11am - DCL 1320',
+                linkText: 'Register',
+                href: ''
+            },
+            {
+                id: 3,
+                title: 'From Nikola Tesla to TESLA: How the Electric Grid Became the Most Complex System Ever Engineered',
+                detail: '2pm - ECEB 1002',
+                linkText: 'details',
+                href: ''
+            }
+        ]
+    }
+]

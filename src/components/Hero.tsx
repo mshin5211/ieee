@@ -38,7 +38,7 @@ const Hero = () => {
                     Join us for tech talks, info sessions, luncheons, workshops, and socials
                 </p>
                 <div className='flex flex-col md:flex-row justify-center items-center gap-3'>
-                    <a href='#overview'>
+                    <a>
                         <button className="bg-[#FF5F0F] border border-white/[0.2] focus:ring-1 ring-white bg-opacity-50 backdrop-blur-sm hover:bg-opacity-100 hover:bg-orange-500 text-white font-bold py-2 px-4 rounded-md">
                             Learn More
                         </button>
