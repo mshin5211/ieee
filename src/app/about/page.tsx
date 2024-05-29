@@ -1,9 +1,20 @@
 import React from 'react'
+import Mission from "@/components/Mission";
+import Overview from "@/components/Overview";
+import Branch from "@/components/Branch";
+import SubHero from '@/components/SubHero';
 
-const page = () => {
+
+const About = () => {
   return (
-    <div>page</div>
+    <div className='relative flex justify-center items-center
+    flex-col mx-auto sm:px-10 px-5 overflow-clip gap-y-5 dark:bg-dark'>
+      <SubHero />
+      <Overview />
+      <Branch />
+      <Mission />
+    </div>
   )
 }
 
-export default page
+export default About

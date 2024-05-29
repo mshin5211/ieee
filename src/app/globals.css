@@ -58,7 +58,7 @@
     animation-iteration-count: 1;
     opacity: 0;
   }
-  #branchImg {
+  .pop-in {
     animation: pop-in linear forwards;
     animation-timeline: view();
     /* animation-range-start: -200px;

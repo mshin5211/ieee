@@ -13,6 +13,7 @@ import { aboutData, workshopData } from "@/_lib/data";
 import { usePathname } from "next/navigation";
 
 
+
 export const FloatingNav = ({
   className,
 }: {
@@ -42,7 +43,7 @@ export const FloatingNav = ({
       let direction = current! - scrollYProgress.getPrevious()!;
 
       if (scrollYProgress.get() < 0.05) {
-        setVisible(false);
+        setVisible(true);
       } else {
         if (direction < 0) {
           setVisible(true);
@@ -69,7 +70,7 @@ export const FloatingNav = ({
         }}
         className={cn("fixed top-5 inset-x-0 max-w-xs sm:max-w-sm lg:max-w-lg mx-auto z-50 ", className)}
       >
-        <Menu setActive={setActive}>
+        {/* <Menu setActive={setActive}>
         <MenuItem setActive={setActive} active={isHome} item="Home" isActive={isHomeActive}>
             <HoveredLink href="/">Home</HoveredLink>
         </MenuItem>
@@ -93,7 +94,31 @@ export const FloatingNav = ({
         <MenuItem setActive={setActive} active={isContact} item="Contact" isActive={isContactActive}>
             <HoveredLink href="/contact">Contact</HoveredLink>
         </MenuItem>
-      </Menu>
+      </Menu> */}
+      <nav
+      className="relative rounded-full border bg-opacity-10 backdrop-blur-md border-dark/[0.2] dark:bg-dark  dark:border-white/[0.2] bg-light shadow-input flex justify-center lg:space-x-6 space-x-2 sm:text-sm text-xs lg:px-8 py-3 "
+      >
+        <Link href='/'
+          className={`cursor-pointer ${isHomeActive ? 'font-bold' : 'font-normal'} text-black dark:text-white hover:opacity-[0.9]`}
+        >
+          Home
+        </Link>
+        <Link href='/about'
+          className={`cursor-pointer ${isAboutActive ? 'font-bold' : 'font-normal'} text-black dark:text-white hover:opacity-[0.9]`}
+        >
+          About
+        </Link>
+        <Link href='/workshops'
+          className={`cursor-pointer ${isWorkshopsActive ? 'font-bold' : 'font-normal'} text-black dark:text-white hover:opacity-[0.9]`}
+        >
+          Workshops
+        </Link>
+        <Link href='/contact'
+          className={`cursor-pointer ${isContactActive ? 'font-bold' : 'font-normal'} text-black dark:text-white hover:opacity-[0.9]`}
+        >
+          Contact
+        </Link>
+      </nav>
         
       </motion.div>
     </AnimatePresence>
