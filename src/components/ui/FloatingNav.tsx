@@ -51,7 +51,7 @@ export const FloatingNav = ({
           setVisible(false);
         }
       }
-    }
+    } 
   });
 
   return (

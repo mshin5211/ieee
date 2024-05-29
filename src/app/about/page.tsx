@@ -9,7 +9,7 @@ const About = () => {
   return (
     <div className='relative flex justify-center items-center
     flex-col mx-auto sm:px-10 px-5 overflow-clip gap-y-5 dark:bg-dark'>
-      <SubHero />
+      <SubHero title='About Us' />
       <Overview />
       <Branch />
       <Mission />
