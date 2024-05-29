@@ -1,3 +1,5 @@
+import { reverse } from "dns";
+
 export const aboutData = [
     {   
         id: 1,
@@ -26,28 +28,32 @@ export const workshopData = [
         title: 'Workshop 1',
         href: '/workshop-1',
         src: '',
-        description: 'workshop 1'
+        description: 'workshop 1',
+        reverse: false
     },
     {
         id: 2,
         title: 'Workshop 2',
         href: '/workshop-2',
         src: '',
-        description: 'workshop 2'
+        description: 'workshop 2',
+        reverse: true
     },
     {
         id: 3,
         title: 'Workshop 3',
         href: '/workshop-3',
         src: '',
-        description: 'workshop 3'
+        description: 'workshop 3',
+        reverse: false
     },
     {
         id: 4,
         title: 'Workshop 4',
         href: '/workshop-4',
         src: '',
-        description: 'workshop 4'
+        description: 'workshop 4',
+        reverse: true
     }
 ]
 export const branchData = [
