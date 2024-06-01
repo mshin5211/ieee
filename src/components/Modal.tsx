@@ -1,9 +1,12 @@
 "use client";
-import React from 'react'
+import React, { CSSProperties } from 'react'
 import { useRef } from 'react'
-const Modal = ({ handleClick }: 
+import { BeatLoader } from 'react-spinners'
+
+const Modal = ({ handleClick, handleSubmitted }: 
     {
-        handleClick: () => void
+        handleClick: () => void,
+        handleSubmitted: () => void
     }
 ) => {
     const modalRef = React.useRef(null);
@@ -12,11 +15,28 @@ const closeModal = (e: React.SyntheticEvent) => {
         handleClick();
     }
 }
-const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    handleClick();
-    alert('Subscribed!');
-}
+const scriptURL = 'https://script.google.com/macros/s/AKfycbyOJeyxPV7pVpcNNqHm-8FCLyJBD0LBVbsL-lre9glLe8Ec2ra6IBfoGzyCyGBEeQ8SNA/exec'
+
+    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault()
+        const form = e.currentTarget
+        setIsLoading(true)
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => console.log('Success!', response))
+        .then(() => setIsLoading(false))
+        .then(() => handleSubmitted())
+        .then(() => form.reset())
+        .then(() => handleClick())
+        .catch(error => console.error('Error!', error.message))
+    }
+
+    const [isLoading, setIsLoading] = React.useState(false);
+
+    const override: CSSProperties = {
+        position: 'fixed',
+        top: '50%'
+      };
+
   return (
     <div ref={modalRef} onClick={closeModal} className='fixed inset-0 bg-black bg-opacity-30 backdrop-blur-sm flex justify-center items-center z-50'>
          <div className='animate-popup md:max-w-[60vw] max-w-[80vw] rounded-lg bg-dark px-10 py-10 gap-y-5 text-white flex flex-col gap-5'>
@@ -37,6 +57,8 @@ const handleSubmit = (e: React.FormEvent) => {
            
             
         </div>
+        <BeatLoader color='#FF5F0F' cssOverride={override} loading={isLoading} size={20}/>
+    
         
     </div>
    

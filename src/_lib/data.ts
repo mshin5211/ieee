@@ -214,3 +214,26 @@ export const dailyAnnouncementData = [
         ]
     }
 ]
+
+export const socialMediaData = [
+    {
+        id: 1,
+        network: 'facebook',
+        url: 'https://www.facebook.com/IEEEUIUC',
+    },
+    {
+        id: 2,
+        network: 'instagram',
+        url: 'https://www.instagram.com/ieee_uiuc/',
+    },
+    {
+        id: 3,
+        network: 'linkedin',
+        url: 'https://www.linkedin.com/company/ieee-uiuc/',
+    },
+    {
+        id: 4,
+        network: 'discord',
+        url: 'https://discord.gg/ieeeuiuc',
+    }
+]

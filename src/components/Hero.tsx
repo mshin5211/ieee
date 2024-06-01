@@ -5,14 +5,17 @@ import { TextGenerateEffect } from './ui/TextGenerateEffect'
 import Modal from './Modal'
 import { useState } from 'react'
 import { ThemeProvider } from './theme-provider';
+import Link from 'next/link';
+import Submitted from './Submitted'
 
 const Hero = () => {
 
     const [showModal, setShowModal] = React.useState(false);
-   
+    const [isSubmitted, setIsSubmitted] = React.useState(false);
+    
   return (
     <header id='heroImg' className='w-screen h-screen max-h-[800px] dark:bg-[url("../images/quadDark.jpg")] bg-[url("../images/quad.jpg")] md:bg-cover flex items-center justify-center'>
-        <div className='opacity-0 md:opacity-100'>
+        <div className='opacity-0 lg:opacity-100'>
             <Spotlight className="-top-40 -left-10 
             md:-left-32 md:-top-20 h-screen" fill="white" />
             <Spotlight className="-top-10 -left-full h-[80vh] w-[50vw]"
@@ -38,18 +41,19 @@ const Hero = () => {
                     Join us for tech talks, info sessions, luncheons, workshops, and socials
                 </p>
                 <div className='flex flex-col md:flex-row justify-center items-center gap-3'>
-                    <a>
+                    <Link href='/about'>
                         <button className="bg-[#FF5F0F] border border-white/[0.2] focus:ring-1 ring-white bg-opacity-50 backdrop-blur-sm hover:bg-opacity-100 hover:bg-orange-500 text-white font-bold py-2 px-4 rounded-md">
                             Learn More
                         </button>
-                    </a>
+                    </Link>
                     <a>
                         <button onClick={() => setShowModal(true)}className="bg-[#0455A4] focus:ring-1 ring-white border border-white/[0.7] bg-opacity-80 backdrop-blur-sm hover:bg-blue-500 hover:bg-opacity-100 text-white font-bold py-2 px-4 rounded-md">
                             Join Us
                         </button>
                     </a>
                 </div>
-                {showModal && <Modal handleClick={() => setShowModal(false)}/>}
+                {showModal && <Modal handleClick={() => setShowModal(false)} handleSubmitted={() => setIsSubmitted(true)}/>}
+                {isSubmitted && <Submitted handleClick={() => setIsSubmitted(false)}/>}
             </div>
         </div>
   

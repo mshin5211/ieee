@@ -1,9 +1,11 @@
 "use client";
 import React, { useState } from 'react'
 import Modal from './Modal'
+import Submitted from './Submitted'
 
 const Mission = () => {
   const [showModal, setShowModal] = React.useState(false);
+  const [isSubmitted, setIsSubmitted] = React.useState(false);
   return (
     <>
         <section className='text-slideIn grid grid-cols-1 md:grid-cols-1 justify-items-center content-center gap-5 my-10'>
@@ -31,7 +33,8 @@ const Mission = () => {
             </div>
             
         </section>
-        {showModal && <Modal handleClick={() => setShowModal(false)}/>}
+        {showModal && <Modal handleClick={() => setShowModal(false)} handleSubmitted={() => setIsSubmitted(true)}/>}
+        {isSubmitted && <Submitted handleClick={() => setIsSubmitted(false)}/>}
         </>
     
    

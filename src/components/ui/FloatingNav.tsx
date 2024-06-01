@@ -108,6 +108,11 @@ export const FloatingNav = ({
         >
           About
         </Link>
+        {/* <Link href='/members'
+          className={`cursor-pointer ${isMembersActive ? 'font-bold' : 'font-normal'} text-black dark:text-white hover:opacity-[0.9]`}
+        >
+          Team
+        </Link> */}
         <Link href='/workshops'
           className={`cursor-pointer ${isWorkshopsActive ? 'font-bold' : 'font-normal'} text-black dark:text-white hover:opacity-[0.9]`}
         >
