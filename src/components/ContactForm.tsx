@@ -7,13 +7,15 @@ import { BeatLoader } from 'react-spinners'
 
 const ContactForm = () => {
 
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbyOJeyxPV7pVpcNNqHm-8FCLyJBD0LBVbsL-lre9glLe8Ec2ra6IBfoGzyCyGBEeQ8SNA/exec'
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbziT2YC7IWVLRlmx1VxT7PEY76xfpVeCd1tImtITY_GxU0Y5IN0abSdMB16nJ5fKOumgA/exec'
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
         const form = e.currentTarget
+        const formData = new FormData(form);
+        formData.append("sheet", "contact");
         setIsLoading(true)
-        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        fetch(scriptURL, { method: 'POST', body: formData})
         .then(response => console.log('Success!', response))
         .then(() => setIsLoading(false))
         .then(() => setIsSubmitted(true))
