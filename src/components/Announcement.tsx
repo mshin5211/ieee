@@ -3,6 +3,7 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 import Day from './Day'
 import { announcementData, dailyAnnouncementData } from '@/_lib/data'
+import { env } from 'process'
 
 type GCalEvent = {
     summary: string,
@@ -56,8 +57,8 @@ const Announcement = () => {
     useEffect(() => {
         const fetchEvents = async () => {
             try {
-                const calendarID = '37b4c899f83aa44711cdfca5abb22f28bb17caeeebaadc7c67c8047f687fb88f@group.calendar.google.com'
-                const calendarKEY = 'AIzaSyB0Re9SxaMPCAom0c0oBUeOdtkdiHPhAdU'
+                const calendarID = env.GOOGLE_CALENDAR_ID;
+                const calendarKEY = env.GOOGLE_CALENDAR_KEY;
                 const eventsUrl = `https://www.googleapis.com/calendar/v3/calendars/${calendarID}/events?key=${calendarKEY}&timeMin=${currentTime.toISOString()}&timeMax=${finalTime.toISOString()}`;
                 const res = await fetch(eventsUrl);
                 const { items } = await res.json() as { items: GCalEvent[] };
