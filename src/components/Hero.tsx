@@ -29,7 +29,7 @@ const Hero = () => {
             items-center justify-center flex-wrap gap-y-4">
                 <h2 className='uppercase tracking-widest text-xs 
                 text-center text-blue-100 max-w-80'>
-                    Write something here
+                    
                 </h2>
                 <TextGenerateEffect 
                     className='text-center text-[40px] md:text-5xl xl:text-6xl '

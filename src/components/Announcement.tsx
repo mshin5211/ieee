@@ -56,7 +56,7 @@ const Announcement = () => {
     useEffect(() => {
         const fetchEvents = async () => {
             try {
-                const calendarID = 'mshin29@illinois.edu'
+                const calendarID = '37b4c899f83aa44711cdfca5abb22f28bb17caeeebaadc7c67c8047f687fb88f@group.calendar.google.com'
                 const calendarKEY = 'AIzaSyB0Re9SxaMPCAom0c0oBUeOdtkdiHPhAdU'
                 const eventsUrl = `https://www.googleapis.com/calendar/v3/calendars/${calendarID}/events?key=${calendarKEY}&timeMin=${currentTime.toISOString()}&timeMax=${finalTime.toISOString()}`;
                 const res = await fetch(eventsUrl);
@@ -140,13 +140,14 @@ const Announcement = () => {
         <div className='w-screen bg-white'>
             <section className='py-16 flex flex-col justify-center items-center text-slideIn'>
                 <div className='flex flex-col gap-3 justify-center items-center'>
-                    <h1 className='text-3xl lg:text-4xl text-center font-bold mb-5'>Announcements</h1>
-                    {announcementData.map((announcement) => (
+                    <h1 className='text-2xl lg:text-3xl text-center font-bold'>Upcoming Events</h1>
+                    <hr className='border border-black my-3 w-[100%]'></hr>
+                    {/* {announcementData.map((announcement) => (
                         <h2 key={announcement.id} className='text-lg font-semibold'>{announcement.title} -&gt; {announcement.date}</h2>
-                    ))}
+                    ))} */}
                 </div>
 
-                <div className='w-[80vw] flex flex-col justify-center mt-20 p-5 bg-dark dark:bg-[#011627] rounded-lg'>
+                <div className='w-[80vw] flex flex-col justify-center mt-16 p-5 bg-dark dark:bg-[#011627] rounded-lg'>
                     {events.map((event, idx) => (
                         <Day key={idx} date={event.date} events={event.events} />
                     ))}

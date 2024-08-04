@@ -34,7 +34,7 @@ const Day = ({ date, events }: {
           }
 
           return (
-            <p key={idx} className='text-black text-center'>{events.title} - {events.time} - <span className='font-semibold'>{detail}</span> - <a href={href} className='text-blue-500 font-semibold'>{linkText}</a></p>
+            <p key={idx} className='text-black text-center font-semibold'><span className='underline font-bold'>{events.title}</span> - {events.time} {events.location.length > 0 ? "-" : ""} {events.location} {detail.length > 0 ? "-" : ""} <span className='text-wrap'>{detail}</span> {href.length > 0 ? "-" : ""} <a href={href} className='text-blue-500 font-semibold'>{linkText}</a></p>
           )
         })}
 

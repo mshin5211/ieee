@@ -36,6 +36,8 @@ export const FloatingNav = ({
   const isMembersActive = pathname.startsWith("/members") ? true : false;
   const isWorkshopsActive = pathname.startsWith("/workshops") ? true : false;
   const isContactActive = pathname.startsWith("/contact") ? true : false;
+  const isMembershipActive = pathname.startsWith("/membership") ? true : false;
+  const isSponsorsActive = pathname.startsWith("/sponsors") ? true : false;
 
   useMotionValueEvent(scrollYProgress, "change", (current) => {
     // Check if current is not undefined and is a number
@@ -68,7 +70,7 @@ export const FloatingNav = ({
         transition={{
           duration: 0.2,
         }}
-        className={cn("fixed top-5 inset-x-0 max-w-xs sm:max-w-sm lg:max-w-lg mx-auto z-50 ", className)}
+        className={cn("fixed top-5 inset-x-0 hidden xs:block max-w-md md:max-w-lg lg:max-w-xl mx-auto z-50 ", className)}
       >
         {/* <Menu setActive={setActive}>
         <MenuItem setActive={setActive} active={isHome} item="Home" isActive={isHomeActive}>
@@ -113,6 +115,12 @@ export const FloatingNav = ({
         >
           Team
         </Link> */}
+         {/* <Link href='/membership'
+          className={`cursor-pointer ${isMembershipActive ? 'font-bold' : 'font-normal'} text-black dark:text-white hover:opacity-[0.9]`}
+        >
+          Membership
+        </Link> */}
+
         <Link href='/workshops'
           className={`cursor-pointer ${isWorkshopsActive ? 'font-bold' : 'font-normal'} text-black dark:text-white hover:opacity-[0.9]`}
         >
@@ -122,6 +130,12 @@ export const FloatingNav = ({
           className={`cursor-pointer ${isContactActive ? 'font-bold' : 'font-normal'} text-black dark:text-white hover:opacity-[0.9]`}
         >
           Contact
+        </Link>
+
+        <Link href='/sponsors'
+          className={`cursor-pointer ${isSponsorsActive ? 'font-bold' : 'font-normal'} text-black dark:text-white hover:opacity-[0.9]`}
+        >
+          Sponsors
         </Link>
       </nav>
         

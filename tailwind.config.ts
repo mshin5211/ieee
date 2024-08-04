@@ -9,6 +9,14 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    screens: {
+      xs: "475px",
+      sm: "640px",
+      md: "768px",
+      lg: "1024px",
+      xl: "1280px",
+      xxl: "1536px",
+    },
     extend: {
       colors: {
         dark: {
@@ -26,6 +34,7 @@ const config: Config = {
       animation: {
         spotlight: "spotlight 2s ease .75s 1 forwards",
         popup: "popup 0.75s ease 1 forwards",
+        gradient: "gradient 4s linear infinite",
       },
       keyframes: {
         spotlight: {
@@ -47,6 +56,9 @@ const config: Config = {
             opacity: '1',
             transform: "scale(1)",
           },
+        },
+        gradient: {
+          to: { 'background-position': '200% center' }
         },
       },
     },

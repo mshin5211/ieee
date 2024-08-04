@@ -14,7 +14,7 @@ const Mission = () => {
                     Mission
                 </h1>
                 <p className='leading-loose py-10 md:max-w-[60vw] max-w-[70vw] md:text-center text-justify first-letter:text-2xl first-letter:font-semibold'>
-                Our mission is to equip you with the resources you need to thrive. Whether you can attend just a few or many events, we’ve got you covered. Dive into enlightening tech talks that offer insights from company recruiters and valuable background information on internships. Forge lasting connections with like-minded peers through our socials. Explore various topics through our engaging workshops. Plus, TAGS hosts recurring meetings to help you hone essential industry skills. Don’t miss out on our other exciting events – stay updated through our weekly email updates. We look forward to seeing you soon!
+                Our mission is to equip you with the resources you need to thrive. Whether you can attend just a few or many events, we’ve got you covered. Dive into enlightening tech talks that offer insights from company recruiters and valuable background information on internships. Forge lasting connections with like-minded peers through our socials. Explore various topics through our engaging workshops. Don’t miss out on our other exciting events – stay updated through our weekly email updates. We look forward to seeing you soon!
                 </p>
                 <div className='flex flex-col md:flex-row justify-center items-center gap-3'>
 

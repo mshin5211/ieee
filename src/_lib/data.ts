@@ -77,6 +77,66 @@ export const branchData = [
     }
 ]
 
+export const sponsorshipData = [
+    {
+        id: 1,
+        title: 'Micron Technology',
+        src: '/micron.png',
+        link: 'https://www.micron.com/'
+    },
+    {
+        id: 2,
+        title: 'Texas Instruments',
+        src: '/ti.jpg',
+        link: 'https://www.ti.com/'
+    },
+    {
+        id: 3,
+        title: 'Cadence Design Systems',
+        src: '/Cadence.png',
+        link: 'https://www.cadence.com'
+    },
+    {
+        id: 4,
+        title: 'Deloitte',
+        src: '/deloitte.png',
+        link: 'http://www.deloitte.com/'
+    },
+    {
+        id: 5,
+        title: 'Halliburton',
+        src: '/halliburton.png',
+        link: 'http://www.halliburton.com'
+    },
+    {
+        id: 6,
+        title: 'Rivian',
+        src: '/rivian.png',
+        link: 'https://rivian.com/'
+    },
+    {
+        id: 7,
+        title: 'Shermco Industries',
+        src: '/shermco industries.png',
+        link: 'http://www.shermco.com'
+    },
+    {
+        id: 8,
+        title: 'The Aerospace Corporation',
+        src: '/acl.png',
+        link: 'http://www.aerospace.org'
+    },
+    {
+        id: 9,
+        title: 'TSMC',
+        src: '/tsmc.png',
+        link: 'http://www.tsmc.com'
+    },
+    
+
+    
+]
+
 export const announcementData = [
     {
         id: 1,

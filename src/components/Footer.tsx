@@ -14,7 +14,7 @@ const Footer = () => {
   const isMembersActive = pathname.startsWith("/members") ? true : false;
   const isWorkshopsActive = pathname.startsWith("/workshops") ? true : false;
   const isContactActive = pathname.startsWith("/contact") ? true : false;
-
+  const isSponsorsActive = pathname.startsWith("/sponsors") ? true : false;
   return (
     <footer className='w-full max-h-[125px] h-[17.5vh] bg-dark flex flex-col justify-center items-center text-white border border-white p-3 gap-2'>
         <div className='flex justify-center items-center gap-3'>
@@ -22,6 +22,7 @@ const Footer = () => {
             <Link href='/about' className={`${isAboutActive ? 'underline' : 'no-underline'} text-xs md:text-sm underline-offset-1 hover:underline`}>About</Link>
             <Link href='/workshops' className={`${isWorkshopsActive ? 'underline' : 'no-underline'} text-xs md:text-sm underline-offset-1 hover:underline`}>Workshops</Link>
             <Link href='/contact' className={`${isContactActive ? 'underline' : 'no-underline'} text-xs md:text-sm underline-offset-1 hover:underline`}>Contact</Link>
+            <Link href='/sponsors' className={`${isSponsorsActive ? 'underline' : 'no-underline'} text-xs md:text-sm underline-offset-1 hover:underline`}>Sponsers</Link>
         </div>
         <div className='flex justify-center items-center gap-3'>
           {socialMediaData.map((social) => (
