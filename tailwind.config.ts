@@ -1,13 +1,13 @@
-import { transform } from "next/dist/build/swc";
-import type { Config } from "tailwindcss";
+import type { Config } from "tailwindcss"
 
-const config: Config = {
+const config = {
   darkMode: ["class"],
   content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
-  ],
+    './src/pages/**/*.{ts,tsx}',
+    './src/components/**/*.{ts,tsx}',
+    './src/app/**/*.{ts,tsx}',
+	],
+  prefix: "",
   theme: {
     screens: {
       xs: "475px",
@@ -37,7 +37,15 @@ const config: Config = {
         gradient: "gradient 4s linear infinite",
       },
       keyframes: {
-        spotlight: {
+        "accordion-down": {
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
+        },
+        "accordion-up": {
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
+        },
+        "spotlight": {
           "0%": {
             opacity: '0',
             transform: "translate(-72%, -62%) scale(0.5)",
@@ -47,7 +55,7 @@ const config: Config = {
             transform: "translate(-50%,-40%) scale(1)",
           },
         },
-        popup: {
+        "popup": {
           "0%": {
             opacity: '0',
             transform: "scale(0.75)",
@@ -63,6 +71,7 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
-};
-export default config;
+  plugins: [require("tailwindcss-animate")],
+} satisfies Config
+
+export default config
