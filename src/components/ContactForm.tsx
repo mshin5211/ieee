@@ -52,7 +52,7 @@ const ContactForm = () => {
         </form>
         <BeatLoader color='#FF5F0F' cssOverride={override} loading={isLoading} size={20}/>
         {isSubmitted && <Submitted handleClick={() => setIsSubmitted(false)}/>}
-        <div className='grid grid-cols-1 grid-rows-2 lg:grid-cols-2 lg:grid-rows-1 w-[90vw] gap-5 h-[70vh] p-10 justify-items-center content-center'>
+        <div className='grid grid-cols-1 grid-rows-2 lg:grid-cols-2 lg:grid-rows-1 w-[90vw] lg:gap-10 gap-20 h-[70vh] p-10 justify-items-center content-center'>
             <div className='flex justify-center items-center flex-col w-full h-full'>
                 <h1 className='text-lg md:text-3xl font-bold text-center'>Find Us</h1>
                 <hr className='border border-black my-5 w-[50%]'></hr>
