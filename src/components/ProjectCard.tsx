@@ -12,7 +12,7 @@ const ProjectCard = ({ title, description, src, href, reverse }: {
     return (
         <div className='mt-10 grid grid-cols-1 grid-rows-2 md:grid-rows-1 md:grid-cols-2 justify-items-center content-center w-[80vw]'>
             <div className={`${reverse ? 'md:order-1' : ''} relative flex justify-center items-center w-full`}>
-                <Image className='object-cover' src='/ECEB.jpg' alt='Project Image' fill={true} />
+                <Image className='object-cover pointer-events-none' src='/ECEB.jpg' alt='Project Image' fill={true} />
             </div>
             
             <div className={`${reverse ? 'md:-order-1' : ''} flex flex-col justify-center items-center w-full bg-dark px-10 py-20 `}>
