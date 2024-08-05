@@ -29,7 +29,7 @@ export const MobileNav = ({
   const isMembersActive = pathname.startsWith("/members") ? true : false;
   const isWorkshopsActive = pathname.startsWith("/workshops") ? true : false;
   const isContactActive = pathname.startsWith("/contact") ? true : false;
-  const isSponsorsActive = pathname.startsWith("/sponsers") ? true : false;
+  const isSponsorsActive = pathname.startsWith("/sponsors") ? true : false;
 
   useMotionValueEvent(scrollYProgress, "change", (current) => {
     // Check if current is not undefined and is a number
