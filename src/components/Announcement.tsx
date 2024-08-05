@@ -57,8 +57,8 @@ const Announcement = () => {
     useEffect(() => {
         const fetchEvents = async () => {
             try {
-                const calendarID = env.GOOGLE_CALENDAR_ID;
-                const calendarKEY = env.GOOGLE_CALENDAR_KEY;
+                const calendarID = env.CALENDAR_ID;
+                const calendarKEY = env.CALENDAR_KEY;
                 const eventsUrl = `https://www.googleapis.com/calendar/v3/calendars/${calendarID}/events?key=${calendarKEY}&timeMin=${currentTime.toISOString()}&timeMax=${finalTime.toISOString()}`;
                 const res = await fetch(eventsUrl);
                 const { items } = await res.json() as { items: GCalEvent[] };
