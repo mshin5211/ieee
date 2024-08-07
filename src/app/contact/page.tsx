@@ -2,6 +2,11 @@ import ContactForm from '@/components/ContactForm'
 import SubHero from '@/components/SubHero'
 import React from 'react'
 
+export const metadata = {
+  title: "Contact"
+}
+
+
 const Contact = () => {
   return (
     <div className='relative flex justify-center items-center

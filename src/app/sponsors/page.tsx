@@ -3,6 +3,9 @@ import SubHero from '@/components/SubHero'
 import SponsorCard from '@/components/sponsorCard'
 import { sponsorshipData } from '@/_lib/data'
 
+export const metadata = {
+  title: "Sponsors"
+}
 
 const Sponsors = () => {
   return (

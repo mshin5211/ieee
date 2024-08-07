@@ -4,6 +4,9 @@ import Overview from "@/components/Overview";
 import Branch from "@/components/Branch";
 import SubHero from '@/components/SubHero';
 
+export const metadata = {
+  title: "About"
+}
 
 const About = () => {
   return (

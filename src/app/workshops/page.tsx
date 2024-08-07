@@ -4,6 +4,11 @@ import ProjectCard from '@/components/ProjectCard'
 import SubHero from '@/components/SubHero'
 import React from 'react'
 
+export const metadata = {
+  title: "Workshops"
+}
+
+
 const Workshops = () => {
   return (
     <div className='relative flex justify-center items-center
