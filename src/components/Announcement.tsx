@@ -2,6 +2,7 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
 import Day from './Day'
+import { fetchEvents } from '@/action/fetchEvents'
 
 
 type GCalEvent = {
@@ -54,10 +55,15 @@ const Announcement = () => {
     // console.log(tmrsDate)
 
     useEffect(() => {
+        // const fetch = async () => {
+        //     const fetchedEvents = await fetchEvents();
+        //     setEvents(fetchedEvents);
+        // }
+        // fetch();
         const fetchEvents = async () => {
             try {
-                const calendarID = process.env.CALENDAR_ID; //should equal to '37b4c899f83aa44711cdfca5abb22f28bb17caeeebaadc7c67c8047f687fb88f@group.calendar.google.com'
-                const calendarKEY = process.env.CALENDAR_KEY; //should equal to 'AIzaSyB0Re9SxaMPCAom0c0oBUeOdtkdiHPhAdU'
+                const calendarID = "37b4c899f83aa44711cdfca5abb22f28bb17caeeebaadc7c67c8047f687fb88f@group.calendar.google.com" //process.env.CALENDAR_ID; 
+                const calendarKEY = "AIzaSyB0Re9SxaMPCAom0c0oBUeOdtkdiHPhAdU" //process.env.CALENDAR_KEY; 
                 const eventsUrl = `https://www.googleapis.com/calendar/v3/calendars/${calendarID}/events?key=${calendarKEY}&timeMin=${currentTime.toISOString()}&timeMax=${finalTime.toISOString()}`;
                 const res = await fetch(eventsUrl);
                 const { items } = await res.json() as { items: GCalEvent[] };
@@ -128,6 +134,7 @@ const Announcement = () => {
         };
 
         fetchEvents();
+        
     }, []);
     console.log(events);
 

@@ -281,16 +281,16 @@ export const socialMediaData = [
     {
         id: 2,
         network: 'instagram',
-        url: 'https://www.instagram.com/ieee_uiuc/',
+        url: 'https://www.instagram.com/ieee.uiuc?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==',
     },
     {
         id: 3,
         network: 'linkedin',
-        url: 'https://www.linkedin.com/company/ieee-uiuc/',
+        url: 'https://www.linkedin.com/company/ieeeuiuc/mycompany/',
     },
     {
         id: 4,
         network: 'discord',
-        url: 'https://discord.gg/ieeeuiuc',
+        url: 'https://discord.gg/Nnqw3yCav7',
     }
 ]

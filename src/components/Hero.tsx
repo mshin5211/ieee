@@ -7,11 +7,13 @@ import { useState } from 'react'
 import { ThemeProvider } from './theme-provider';
 import Link from 'next/link';
 import Submitted from './Submitted'
+import EmailError from './EmailError';
 
 const Hero = () => {
 
     const [showModal, setShowModal] = React.useState(false);
     const [isSubmitted, setIsSubmitted] = React.useState(false);
+    const [emailError, setEmailError] = React.useState(false);
     
   return (
     <header id='heroImg' className='w-screen h-screen max-h-[800px] dark:bg-[url("../images/quadDark.jpg")] bg-[url("../images/quad.jpg")] md:bg-cover flex items-center justify-center'>
@@ -42,7 +44,7 @@ const Hero = () => {
                 </p>
                 <div className='flex flex-col md:flex-row justify-center items-center gap-3'>
                     <Link href='/about'>
-                        <button className="bg-[#FF5F0F] border border-white/[0.2] focus:ring-1 ring-white bg-opacity-50 backdrop-blur-sm hover:bg-opacity-100 hover:bg-orange-500 text-white font-bold py-2 px-4 rounded-md">
+                        <button className="bg-[#FF5F0F] border border-white/[0.2] focus:ring-1 ring-white bg-opacity-70 backdrop-blur-sm hover:bg-opacity-100 hover:bg-orange-500 text-white font-bold py-2 px-4 rounded-md">
                             Learn More
                         </button>
                     </Link>
@@ -52,8 +54,9 @@ const Hero = () => {
                         </button>
                     </a>
                 </div>
-                {showModal && <Modal handleClick={() => setShowModal(false)} handleSubmitted={() => setIsSubmitted(true)}/>}
+                {showModal && <Modal handleClick={() => setShowModal(false)} handleSubmitted={() => setIsSubmitted(true)} handleEmailError={() => setEmailError(true)}/>}
                 {isSubmitted && <Submitted handleClick={() => setIsSubmitted(false)}/>}
+                {emailError && <EmailError handleClick={() => setEmailError(false)}/>}
             </div>
         </div>
   

@@ -3,10 +3,11 @@ import React, { CSSProperties } from 'react'
 import { useRef } from 'react'
 import { BeatLoader } from 'react-spinners'
 
-const Modal = ({ handleClick, handleSubmitted }: 
+const Modal = ({ handleClick, handleSubmitted, handleEmailError }: 
     {
         handleClick: () => void,
-        handleSubmitted: () => void
+        handleSubmitted: () => void,
+        handleEmailError: () => void
     }
 ) => {
     const modalRef = React.useRef(null);
@@ -21,6 +22,12 @@ const scriptURL = 'https://script.google.com/macros/s/AKfycbziT2YC7IWVLRlmx1VxT7
         e.preventDefault()
         const form = e.currentTarget
         const formData = new FormData(form);
+        const email = formData.get('email') as string;
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailPattern.test(email)) {
+            handleEmailError();
+            return;
+        }
         formData.append("sheet", "mailing_list");
         setIsLoading(true)
         fetch(scriptURL, { method: 'POST', body: formData})

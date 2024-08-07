@@ -2,10 +2,13 @@
 import React, { useState } from 'react'
 import Modal from './Modal'
 import Submitted from './Submitted'
+import EmailError from './EmailError';
 
 const Mission = () => {
   const [showModal, setShowModal] = React.useState(false);
   const [isSubmitted, setIsSubmitted] = React.useState(false);
+  const [emailError, setEmailError] = React.useState(false);
+
   return (
     <>
         <section className='text-slideIn grid grid-cols-1 md:grid-cols-1 justify-items-center content-center gap-5 my-10'>
@@ -23,7 +26,7 @@ const Mission = () => {
                     </button>
                     
 
-                    <button className='bg-[#0455A4] focus:ring-1 ring-white border border-white/[0.7] bg-opacity-80 backdrop-blur-sm hover:bg-blue-500 hover:bg-opacity-100 text-white font-bold py-2 px-4 rounded-md'>
+                    <button onClick={() => window.open("https://discord.gg/Nnqw3yCav7", "_blank")} className='bg-[#0455A4] focus:ring-1 ring-white border border-white/[0.7] bg-opacity-80 backdrop-blur-sm hover:bg-blue-500 hover:bg-opacity-100 text-white font-bold py-2 px-4 rounded-md'>
                         Join Discord
                     </button>
 
@@ -33,8 +36,9 @@ const Mission = () => {
             </div>
             
         </section>
-        {showModal && <Modal handleClick={() => setShowModal(false)} handleSubmitted={() => setIsSubmitted(true)}/>}
+        {showModal && <Modal handleClick={() => setShowModal(false)} handleSubmitted={() => setIsSubmitted(true)} handleEmailError={() => setEmailError(true)}/>}
         {isSubmitted && <Submitted handleClick={() => setIsSubmitted(false)}/>}
+        {emailError && <EmailError handleClick={() => setEmailError(false)}/>}
         </>
     
    

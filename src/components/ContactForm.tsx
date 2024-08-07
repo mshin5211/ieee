@@ -3,6 +3,7 @@ import React, { CSSProperties } from 'react'
 import { useState } from 'react'
 import Submitted from './Submitted'
 import { BeatLoader } from 'react-spinners'
+import EmailError from './EmailError'
 
 
 const ContactForm = () => {
@@ -13,6 +14,12 @@ const ContactForm = () => {
         e.preventDefault()
         const form = e.currentTarget
         const formData = new FormData(form);
+        const email = formData.get('email') as string;
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailPattern.test(email)) {
+            setEmailError(true);
+            return;
+        }
         formData.append("sheet", "contact");
         setIsLoading(true)
         fetch(scriptURL, { method: 'POST', body: formData})
@@ -25,6 +32,7 @@ const ContactForm = () => {
 
     const [isSubmitted, setIsSubmitted] = React.useState(false);
     const [isLoading, setIsLoading] = React.useState(false);
+    const [emailError, setEmailError] = React.useState(false);
 
     const override: CSSProperties = {
         position: 'fixed',
@@ -52,6 +60,7 @@ const ContactForm = () => {
         </form>
         <BeatLoader color='#FF5F0F' cssOverride={override} loading={isLoading} size={20}/>
         {isSubmitted && <Submitted handleClick={() => setIsSubmitted(false)}/>}
+        {emailError && <EmailError handleClick={() => setEmailError(false)}/>}
         <div className='grid grid-cols-1 grid-rows-2 lg:grid-cols-2 lg:grid-rows-1 w-[90vw] lg:gap-10 gap-20 h-[70vh] p-10 justify-items-center content-center'>
             <div className='flex justify-center items-center flex-col w-full h-full'>
                 <h1 className='text-lg md:text-3xl font-bold text-center'>Find Us</h1>
