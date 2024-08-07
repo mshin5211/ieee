@@ -55,85 +55,85 @@ const Announcement = () => {
     // console.log(tmrsDate)
 
     useEffect(() => {
-        // const fetch = async () => {
-        //     const fetchedEvents = await fetchEvents();
-        //     setEvents(fetchedEvents);
-        // }
-        // fetch();
-        const fetchEvents = async () => {
-            try {
-                const calendarID = "37b4c899f83aa44711cdfca5abb22f28bb17caeeebaadc7c67c8047f687fb88f@group.calendar.google.com" //process.env.CALENDAR_ID; 
-                const calendarKEY = "AIzaSyB0Re9SxaMPCAom0c0oBUeOdtkdiHPhAdU" //process.env.CALENDAR_KEY; 
-                const eventsUrl = `https://www.googleapis.com/calendar/v3/calendars/${calendarID}/events?key=${calendarKEY}&timeMin=${currentTime.toISOString()}&timeMax=${finalTime.toISOString()}`;
-                const res = await fetch(eventsUrl);
-                const { items } = await res.json() as { items: GCalEvent[] };
+        const fetch = async () => {
+            const fetchedEvents = await fetchEvents();
+            setEvents(fetchedEvents);
+        }
+        fetch();
+        // const fetchEvents = async () => {
+        //     try {
+        //         const calendarID = "37b4c899f83aa44711cdfca5abb22f28bb17caeeebaadc7c67c8047f687fb88f@group.calendar.google.com" //process.env.CALENDAR_ID; 
+        //         const calendarKEY = "AIzaSyB0Re9SxaMPCAom0c0oBUeOdtkdiHPhAdU" //process.env.CALENDAR_KEY; 
+        //         const eventsUrl = `https://www.googleapis.com/calendar/v3/calendars/${calendarID}/events?key=${calendarKEY}&timeMin=${currentTime.toISOString()}&timeMax=${finalTime.toISOString()}`;
+        //         const res = await fetch(eventsUrl);
+        //         const { items } = await res.json() as { items: GCalEvent[] };
 
-                const days: Array<{
-                    date: Date,
-                    events: {
-                        title: string,
-                        time: string,
-                        location: string,
-                        description: string,
-                    }[]
-                }> = [];
-                let curr = new Date(currentTime);
-                const final = new Date(finalTime);
-                final.setDate(final.getDate() + 1);
-                const finalDate = final.getDate();
+        //         const days: Array<{
+        //             date: Date,
+        //             events: {
+        //                 title: string,
+        //                 time: string,
+        //                 location: string,
+        //                 description: string,
+        //             }[]
+        //         }> = [];
+        //         let curr = new Date(currentTime);
+        //         const final = new Date(finalTime);
+        //         final.setDate(final.getDate() + 1);
+        //         const finalDate = final.getDate();
 
-                while (curr.getDate() !== finalDate) {
-                    days.push({ date: curr, events: [] });
-                    curr = new Date(curr);
-                    curr.setDate(curr.getDate() + 1);
-                }
+        //         while (curr.getDate() !== finalDate) {
+        //             days.push({ date: curr, events: [] });
+        //             curr = new Date(curr);
+        //             curr.setDate(curr.getDate() + 1);
+        //         }
 
-                const events = items
-                    .sort(({ start: { dateTime: firstStartTime } }, { start: { dateTime: secondStartTime } }) => {
-                        return new Date(firstStartTime).getTime() - new Date(secondStartTime).getTime();
-                    })
-                    .map(({ summary, description, location, start: { dateTime: startTime }, end: { dateTime: endTime } }) => {
-                        return {
-                            title: summary,
-                            start: new Date(startTime),
-                            end: new Date(endTime),
-                            location: location ?? "",
-                            description: description ?? "",
-                        };
-                    })
+        //         const events = items
+        //             .sort(({ start: { dateTime: firstStartTime } }, { start: { dateTime: secondStartTime } }) => {
+        //                 return new Date(firstStartTime).getTime() - new Date(secondStartTime).getTime();
+        //             })
+        //             .map(({ summary, description, location, start: { dateTime: startTime }, end: { dateTime: endTime } }) => {
+        //                 return {
+        //                     title: summary,
+        //                     start: new Date(startTime),
+        //                     end: new Date(endTime),
+        //                     location: location ?? "",
+        //                     description: description ?? "",
+        //                 };
+        //             })
 
-                for (const event of events) {
-                    const day = days.find(({ date }) => date.getDate() === event.start.getDate());
+        //         for (const event of events) {
+        //             const day = days.find(({ date }) => date.getDate() === event.start.getDate());
 
-                    const timeOptions = {
-                        hour: 'numeric',
-                        minute: '2-digit',
-                    } as const;
-                    const start = event.start.toLocaleTimeString('en-US', timeOptions);
-                    const end = event.end.toLocaleTimeString('en-US', timeOptions);
+        //             const timeOptions = {
+        //                 hour: 'numeric',
+        //                 minute: '2-digit',
+        //             } as const;
+        //             const start = event.start.toLocaleTimeString('en-US', timeOptions);
+        //             const end = event.end.toLocaleTimeString('en-US', timeOptions);
 
-                    day?.events.push({
-                        title: event.title,
-                        description: event.description,
-                        location: event.location,
-                        time: `${start} : ${end}`
-                    });
-                }
+        //             day?.events.push({
+        //                 title: event.title,
+        //                 description: event.description,
+        //                 location: event.location,
+        //                 time: `${start} : ${end}`
+        //             });
+        //         }
 
-                setEvents(
-                    days.map(({ date, events }) => {
-                        return {
-                            date: date.toLocaleDateString('en-US', dateOptions), events
-                        }
-                    })
-                )
+        //         setEvents(
+        //             days.map(({ date, events }) => {
+        //                 return {
+        //                     date: date.toLocaleDateString('en-US', dateOptions), events
+        //                 }
+        //             })
+        //         )
 
-            } catch (error) {
-                console.error('Error fetching events:', error);
-            }
-        };
+        //     } catch (error) {
+        //         console.error('Error fetching events:', error);
+        //     }
+        // };
 
-        fetchEvents();
+        // fetchEvents();
         
     }, []);
     console.log(events);
@@ -156,7 +156,7 @@ const Announcement = () => {
 
                 <div className='w-[80vw] flex flex-col justify-center mt-16 p-5 bg-dark dark:bg-[#011627] rounded-lg'>
                     {events.map((event, idx) => (
-                        <Day key={idx} date={event.date} events={event.events} />
+                        <Day key={idx} date={event.date} initialVisible={idx === 0 && event.events.length !== 0} events={event.events} />
                     ))}
                 </div>
 

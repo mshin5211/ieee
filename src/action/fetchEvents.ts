@@ -102,10 +102,13 @@ export const fetchEvents = async () => {
                 };
             });
 
+            return fetchedEvents;
+
         } catch (error) {
             console.error('Error fetching events:', error);
+            return [];
         }
 
-        return fetchEvents;
+        
 
 }

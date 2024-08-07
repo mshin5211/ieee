@@ -2,8 +2,9 @@
 import React from 'react'
 import { useState } from 'react'
 
-const Day = ({ date, events }: {
+const Day = ({ date, initialVisible, events }: {
   date: string,
+  initialVisible: boolean,
   events: {
     title: string,
     time: string,
@@ -11,7 +12,7 @@ const Day = ({ date, events }: {
     description: string,
   }[]
 }) => {
-  const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState(initialVisible);
 
   return (
     <div onClick={() => { setIsVisible(!isVisible) }} className='flex flex-col w-full rounded-lg justify-center items-center'>
@@ -19,25 +20,27 @@ const Day = ({ date, events }: {
         <h1 className='text-xl text-white group-hover:text-dark font-bold'>{date}</h1>
       </div>
       <div id='dayCard' className={`${isVisible ? 'visible' : 'hidden'} rounded-lg flex flex-col justify-center items-center w-full py-5 px-10 gap-y-5 bg-white`}>
-        {events.map((events, idx) => {
-          let linkText = '';
-          let href = '';
-          let detail = '';
+        { events.length === 0 
+          ? <p>No scheduled events for this day</p>
+          : events.map((events, idx) => {
+              let linkText = '';
+              let href = '';
+              let detail = '';
 
-          if (typeof window !== 'undefined') {
-            const parser = new DOMParser();
-            const doc = parser.parseFromString(events.description, 'text/html');
-            const linkElement = doc.querySelector('a');
-            linkText = linkElement?.textContent || '';
-            href = linkElement?.getAttribute('href') || '';
-            detail = doc.body?.textContent?.replace(linkText, '').replace(href, '') || '';
-          }
+              if (typeof window !== 'undefined') {
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(events.description, 'text/html');
+                const linkElement = doc.querySelector('a');
+                linkText = linkElement?.textContent || '';
+                href = linkElement?.getAttribute('href') || '';
+                detail = doc.body?.textContent?.replace(linkText, '').replace(href, '') || '';
+              }
 
-          return (
-            <p key={idx} className='text-black text-center font-semibold'><span className='underline font-bold'>{events.title}</span> - {events.time} {events.location.length > 0 ? "-" : ""} {events.location} {detail.length > 0 ? "-" : ""} <span className='text-wrap'>{detail}</span> {href.length > 0 ? "-" : ""} <a href={href} className='text-blue-500 font-semibold'>{linkText}</a></p>
-          )
-        })}
-
+              return (
+                <p key={idx} className='text-black text-center font-semibold'><span className='underline font-bold'>{events.title}</span> - {events.time} {events.location.length > 0 ? "-" : ""} {events.location} {detail.length > 0 ? "-" : ""} <span className='text-wrap'>{detail}</span> {href.length > 0 ? "-" : ""} <a href={href} className='text-blue-500 font-semibold'>{linkText}</a></p>
+              )
+            })
+        }
       </div>
     </div>
   )
