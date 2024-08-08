@@ -8,7 +8,7 @@ const SubHero = ({ title, }: {
        <div className='w-full h-[30%] bg-white  md:bg-cover flex items-center justify-center'>
 
       </div>  
-      <div className={`w-full h-[70%] bg-[url("../images/quad.jpg")]  md:bg-cover flex items-center justify-center`}>
+      <div className={`w-full h-[70%] bg-[url("../images/quad.jpg")] md:bg-cover flex items-center justify-center`}>
         <h1 className='text-white text-4xl md:text-5xl'>{title}</h1>
       </div>
     </div>

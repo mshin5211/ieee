@@ -17,11 +17,11 @@ const Day = ({ date, initialVisible, events }: {
   return (
     <div onClick={() => { setIsVisible(!isVisible) }} className='flex flex-col w-full rounded-lg justify-center items-center'>
       <div className='group hover:cursor-pointer hover:bg-white hover:border-dark border-white border flex justify-center items-center p-1 bg-dark w-full rounded-md'>
-        <h1 className='text-xl text-white group-hover:text-dark font-bold'>{date}</h1>
+        <h1 className='text-lg p-[2px] text-white group-hover:text-dark font-bold'>{date}</h1>
       </div>
       <div id='dayCard' className={`${isVisible ? 'visible' : 'hidden'} rounded-lg flex flex-col justify-center items-center w-full py-5 px-10 gap-y-5 bg-white`}>
         { events.length === 0 
-          ? <p>No scheduled events for this day</p>
+          ? <p className='text-black text-center font-semibold'>No scheduled events for the day</p>
           : events.map((events, idx) => {
               let linkText = '';
               let href = '';

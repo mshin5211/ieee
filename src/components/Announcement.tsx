@@ -3,6 +3,7 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 import Day from './Day'
 import { fetchEvents } from '@/action/fetchEvents'
+import CalendarModal from './calendarModal'
 
 
 type GCalEvent = {
@@ -140,7 +141,7 @@ const Announcement = () => {
 
 
 
-    let weeklyEvents = []
+    const [showCalendarModal, setShowCalendarModal] = React.useState(false);
 
 
     return (
@@ -156,13 +157,19 @@ const Announcement = () => {
 
                 <div className='w-[80vw] flex flex-col justify-center mt-16 p-5 bg-dark dark:bg-[#011627] rounded-lg'>
                     {events.map((event, idx) => (
-                        <Day key={idx} date={event.date} initialVisible={idx === 0 && event.events.length !== 0} events={event.events} />
+                        <Day key={idx} date={event.date} initialVisible={event.events.length !== 0} events={event.events} />
                     ))}
                 </div>
+                <div className='w-[80vw] flex flex-col justify-center items-end'>
+                    <button onClick={() => setShowCalendarModal(true)} className='mt-2 font-semibold hover:underline text-dark'>Show full calendar</button>
+                </div>
+                
+                
 
 
 
             </section>
+            {showCalendarModal && <CalendarModal handleClick={() => setShowCalendarModal(false)} />}
         </div>
 
     )
