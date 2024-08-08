@@ -19,7 +19,7 @@ const closeModal = (e: React.SyntheticEvent) => {
     <div ref={modalRef} onClick={closeModal} className='fixed inset-0 bg-black bg-opacity-30 backdrop-blur-sm flex justify-center items-center z-50'>
          <div className='animate-popup md:max-w-[60vw] max-w-[80vw] w-[90vw] max-h-[80vh] aspect-square rounded-lg bg-dark px-5 py-5 gap-y-5 text-white flex flex-col gap-5'>
             <div className='flex flex-row w-full justify-between items-center'>
-                Calendar
+                <p className='font-semibold'>Calendar</p>
                 <button className='w-6 h-6 relative flex justify-center items-center' onClick={() => handleClick()}>
                 <Image className='object-contain filter invert' alt="close" src="/cross.png" fill={true} />
                 </button>
