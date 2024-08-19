@@ -70,7 +70,7 @@ const ContactForm = () => {
                 <p className='text-center'>306 N Wright St, Urbana, IL 61801</p>
                 <p className='text-center'>Room 1016</p>
             </div>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6102.456078120263!2d-88.23059812430482!3d40.1149212714897!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880cd741bc2575ed%3A0x28db54436635eb67!2sElectrical%20and%20Computer%20Engineering%20Building%2C%20306%20N%20Wright%20St%2C%20Urbana%2C%20IL%2061801!5e0!3m2!1sen!2sus!4v1717197966781!5m2!1sen!2sus" loading="lazy" className='border-4 place-self-center border-dark w-full h-full max-h-[600px]'></iframe>
+            <iframe className='border-4 place-self-center border-dark w-full h-full max-h-[600px]' src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6102.456078120263!2d-88.23059812430482!3d40.1149212714897!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880cd741bc2575ed%3A0x28db54436635eb67!2sElectrical%20and%20Computer%20Engineering%20Building%2C%20306%20N%20Wright%20St%2C%20Urbana%2C%20IL%2061801!5e0!3m2!1sen!2sus!4v1717197966781!5m2!1sen!2sus" loading="lazy" ></iframe>
 
         </div>
         

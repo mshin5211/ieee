@@ -25,6 +25,7 @@ type Days = Array<{
 export const fetchEvents = async () => {
 
     const dateOptions = {
+        timeZone: 'America/Chicago',
         weekday: 'long',
         month: 'long',
         day: '2-digit',
@@ -81,6 +82,7 @@ export const fetchEvents = async () => {
                 const day = days.find(({ date }) => date.getDate() === event.start.getDate());
 
                 const timeOptions = {
+                    timeZone: 'America/Chicago',
                     hour: 'numeric',
                     minute: '2-digit',
                 } as const;
@@ -101,7 +103,7 @@ export const fetchEvents = async () => {
                     events
                 };
             });
-
+            console.log(fetchedEvents);
             return fetchedEvents;
 
         } catch (error) {
