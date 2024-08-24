@@ -160,7 +160,8 @@ const Announcement = () => {
                         <Day key={idx} date={event.date} initialVisible={event.events.length !== 0} events={event.events} />
                     ))}
                 </div>
-                <div className='w-[80vw] flex flex-col justify-center items-end'>
+                <div className='w-[80vw] flex justify-between items-center'>
+                    <p className='mt-2 font-semibold text-dark'>Events shown in time zone: Central Time - Chicago</p>
                     <button onClick={() => setShowCalendarModal(true)} className='mt-2 font-semibold hover:underline text-dark'>Show full calendar</button>
                 </div>
                 

@@ -96,11 +96,11 @@ export const MobileNav = ({
             >
             Team
             </Link> */}
-            <Link onClick={() => setIsOpened(false)} href='/workshops'
+            {/* <Link onClick={() => setIsOpened(false)} href='/workshops'
             className={`cursor-pointer ${isWorkshopsActive ? 'font-bold' : 'font-normal'} text-white dark:text-white hover:opacity-[0.9]`}
             >
             Workshops
-            </Link>
+            </Link> */}
             <Link onClick={() => setIsOpened(false)} href='/contact'
             className={`cursor-pointer ${isContactActive ? 'font-bold' : 'font-normal'} text-white dark:text-white hover:opacity-[0.9]`}
             >
