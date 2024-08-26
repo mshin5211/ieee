@@ -1,5 +1,7 @@
 "use server"
 
+import moment from "moment-timezone"
+
 type GCalEvent = {
     summary: string,
     location?: string,
@@ -31,16 +33,18 @@ export const fetchEvents = async () => {
         day: '2-digit',
     } as const;
 
-    const currentTime = new Date()
-    const today = currentTime.toLocaleDateString('en-US', dateOptions);
-    const finalTime = new Date(currentTime)
-    finalTime.setDate(currentTime.getDate() + 6)
-    const final = finalTime.toLocaleDateString('en-US', dateOptions);
+    // const currentTime = new Date();
+    // const today = currentTime.toLocaleDateString('en-US', dateOptions);
+    const startOfDay = moment.tz("America/Chicago").startOf('day');
+    const finalOfDay = moment.tz("America/Chicago").add(7, 'days').startOf('day');
+    // const finalTime = new Date(currentTime)
+    // finalTime.setDate(currentTime.getDate() + 6)
+    // const final = finalTime.toLocaleDateString('en-US', dateOptions);
 
         try {
             const calendarID = process.env.CALENDAR_ID; 
             const calendarKEY = process.env.CALENDAR_KEY; 
-            const eventsUrl = `https://www.googleapis.com/calendar/v3/calendars/${calendarID}/events?key=${calendarKEY}&timeMin=${currentTime.toISOString()}&timeMax=${finalTime.toISOString()}`;
+            const eventsUrl = `https://www.googleapis.com/calendar/v3/calendars/${calendarID}/events?key=${calendarKEY}&timeMin=${startOfDay.format()}&timeMax=${finalOfDay.format()}`;
             const res = await fetch(eventsUrl);
             const { items } = await res.json() as { items: GCalEvent[] };
 
@@ -53,10 +57,11 @@ export const fetchEvents = async () => {
                     description: string,
                 }[]
             }> = [];
-            let curr = new Date(currentTime);
-            const final = new Date(finalTime);
+            let curr = startOfDay.toDate();
+            const final = finalOfDay.toDate();
             final.setDate(final.getDate() + 1);
             const finalDate = final.getDate();
+            console.log(finalDate);
 
             while (curr.getDate() !== finalDate) {
                 days.push({ date: curr, events: [] });
