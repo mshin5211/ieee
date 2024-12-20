@@ -27,13 +27,13 @@ export const FloatingNav = ({
   const pathname = usePathname();
   const isHome = pathname === ("/") ? null : active;
   const isAbout = pathname.startsWith("/about") ? null : active;
-  const isMembers = pathname.startsWith("/members") ? null : active;
+  const isMembers = pathname.startsWith("/leadership") ? null : active;
   const isWorkshops = pathname.startsWith("/workshops") ? null : active;
   const isContact = pathname.startsWith("/contact") ? null : active;
 
   const isHomeActive = pathname === ("/") ? true : false;
   const isAboutActive = pathname.startsWith("/about") ? true : false;
-  const isMembersActive = pathname.startsWith("/members") ? true : false;
+  const isMembersActive = pathname.startsWith("/leadership") ? true : false;
   const isWorkshopsActive = pathname.startsWith("/workshops") ? true : false;
   const isContactActive = pathname.startsWith("/contact") ? true : false;
   const isMembershipActive = pathname.startsWith("/membership") ? true : false;
@@ -110,11 +110,11 @@ export const FloatingNav = ({
         >
           About
         </Link>
-        {/* <Link href='/members'
+        <Link href='/leadership'
           className={`cursor-pointer ${isMembersActive ? 'font-bold' : 'font-normal'} text-black dark:text-white hover:opacity-[0.9]`}
         >
-          Team
-        </Link> */}
+          Leadership
+        </Link>
          {/* <Link href='/membership'
           className={`cursor-pointer ${isMembershipActive ? 'font-bold' : 'font-normal'} text-black dark:text-white hover:opacity-[0.9]`}
         >

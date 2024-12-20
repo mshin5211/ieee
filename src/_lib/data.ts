@@ -22,6 +22,89 @@ export const aboutData = [
         href: '/branch-4',
     }
 ];
+export const administration_data = [
+    {
+        id: 1,
+        name: "Nikhil Bhalla",
+        src: '/Nikhil Bhalla.jpg',
+        description: 'https://maxwellmamishev.github.io/',
+        href: 'https://maxwellmamishev.github.io/',
+        role: 'President'
+    },
+    {
+        id: 8,
+        name: "Jiseob Shin",
+        src: '/Jiseob Shin.jpg',
+        description: '',
+        href: 'https://www.linkedin.com/in/jiseob/',
+        role: 'Membership Vice President',
+    },
+    {
+        id: 2,
+        name: "Morris Yu",
+        src: '/Morris Yu.jpg',
+        description: '',
+        href: 'https://www.linkedin.com/in/morrisyu/',
+        role: 'Secretary',
+    },
+    {
+        id: 4,
+        name: "Maxwell Mamishev",
+        src: '/Maxwell Mamishev.png',
+        description: 'https://maxwellmamishev.github.io/',
+        href: 'https://maxwellmamishev.github.io/',
+        role: 'Director of Corporate Relations'
+    },
+    {
+        id: 9,
+        name: "Eric Nieto",
+        src: '/Eric Nieto.png',
+        description: '',
+        href: 'https://www.linkedin.com/in/ericnietogonzalez/',
+        role: 'Social Director',
+    },
+    {
+        id: 6,
+        name: "Rohit Iyer",
+        src: '/Rohit Iyer.jpeg',
+        description: '',
+        href: 'https://www.linkedin.com/in/rojiyer/',
+        role: 'Hardware Director',
+    },
+    {
+        id: 7,
+        name: "Siddh Shah",
+        src: '/Siddh Shah.jpeg',
+        description: '',
+        href: 'https://www.linkedin.com/in/siddhshah05/',
+        role: 'Publicity Director',
+    },
+    {
+        id: 3,
+        name: "Stephen Messing",
+        src: '/Stephen Messing.jpg',
+        description: '',
+        href: 'https://www.linkedin.com/in/stephen-messing/',
+        role: 'Advisor',
+    },
+    {
+        id: 5,
+        name: "Rudra Patel",
+        src: '/Rudra Patel.jpeg',
+        description: '',
+        href: 'https://www.linkedin.com/in/rudra-patel-89805123b/',
+        role: 'Software Director',
+    },
+    {
+        id: 11,
+        name: "Minseob Shin",
+        src: '/Minseob_shin.jpg',
+        description: '',
+        href: 'https://www.linkedin.com/in/minseob-shin/',
+        role: 'Webmaster',
+    },
+    
+];
 export const workshopData = [
     {
         id: 1,

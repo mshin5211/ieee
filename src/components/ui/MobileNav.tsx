@@ -26,7 +26,7 @@ export const MobileNav = ({
 
   const isHomeActive = pathname === ("/") ? true : false;
   const isAboutActive = pathname.startsWith("/about") ? true : false;
-  const isMembersActive = pathname.startsWith("/members") ? true : false;
+  const isMembersActive = pathname.startsWith("/leadership") ? true : false;
   const isWorkshopsActive = pathname.startsWith("/workshops") ? true : false;
   const isContactActive = pathname.startsWith("/contact") ? true : false;
   const isSponsorsActive = pathname.startsWith("/sponsors") ? true : false;
@@ -91,11 +91,11 @@ export const MobileNav = ({
             >
             About
             </Link>
-            {/* <Link href='/members'
-            className={`cursor-pointer ${isMembersActive ? 'font-bold' : 'font-normal'} text-black dark:text-white hover:opacity-[0.9]`}
+            <Link href='/leadership'
+            className={`cursor-pointer ${isMembersActive ? 'font-bold' : 'font-normal'} text-white dark:text-white hover:opacity-[0.9]`}
             >
-            Team
-            </Link> */}
+            Officers
+            </Link>
             {/* <Link onClick={() => setIsOpened(false)} href='/workshops'
             className={`cursor-pointer ${isWorkshopsActive ? 'font-bold' : 'font-normal'} text-white dark:text-white hover:opacity-[0.9]`}
             >

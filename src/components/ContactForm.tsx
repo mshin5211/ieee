@@ -8,7 +8,7 @@ import EmailError from './EmailError'
 
 const ContactForm = () => {
 
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbziT2YC7IWVLRlmx1VxT7PEY76xfpVeCd1tImtITY_GxU0Y5IN0abSdMB16nJ5fKOumgA/exec'
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbwuRnP6BIpIyvQc5jQBXhGcd7dxKrK80-zYGYb_czEBZK-ckZj5QlsSGIons5uXavjG2A/exec'
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()

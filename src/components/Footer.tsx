@@ -11,7 +11,7 @@ const Footer = () => {
 
   const isHomeActive = pathname === ("/") ? true : false;
   const isAboutActive = pathname.startsWith("/about") ? true : false;
-  const isMembersActive = pathname.startsWith("/members") ? true : false;
+  const isMembersActive = pathname.startsWith("/leadership") ? true : false;
   const isWorkshopsActive = pathname.startsWith("/workshops") ? true : false;
   const isContactActive = pathname.startsWith("/contact") ? true : false;
   const isSponsorsActive = pathname.startsWith("/sponsors") ? true : false;
@@ -20,6 +20,7 @@ const Footer = () => {
         <div className='flex justify-center items-center gap-3'>
             <Link href='/' className={`${isHomeActive ? 'underline' : 'no-underline'} text-xs md:text-sm underline-offset-1 hover:underline`}>Home</Link>
             <Link href='/about' className={`${isAboutActive ? 'underline' : 'no-underline'} text-xs md:text-sm underline-offset-1 hover:underline`}>About</Link>
+            <Link href='/leadership' className={`${isMembersActive ? 'underline' : 'no-underline'} text-xs md:text-sm underline-offset-1 hover:underline`}>Leadership</Link>
             {/* <Link href='/workshops' className={`${isWorkshopsActive ? 'underline' : 'no-underline'} text-xs md:text-sm underline-offset-1 hover:underline`}>Workshops</Link> */}
             <Link href='/contact' className={`${isContactActive ? 'underline' : 'no-underline'} text-xs md:text-sm underline-offset-1 hover:underline`}>Contact</Link>
             <Link href='/sponsors' className={`${isSponsorsActive ? 'underline' : 'no-underline'} text-xs md:text-sm underline-offset-1 hover:underline`}>Sponsors</Link>
