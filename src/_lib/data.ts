@@ -27,9 +27,17 @@ export const administration_data = [
         id: 1,
         name: "Nikhil Bhalla",
         src: '/Nikhil Bhalla.jpg',
-        description: 'https://maxwellmamishev.github.io/',
-        href: 'https://maxwellmamishev.github.io/',
+        description: '',
+        href: 'https://www.linkedin.com/in/nikhil-bhalla01/',
         role: 'President'
+    },
+    {
+        id: 12,
+        name: "Ryan Ilgen",
+        src: '/Ryan Ilgen.jpg',
+        description: '',
+        href: 'https://www.linkedin.com/in/ryan-ilgen-a67b0a28b/',
+        role: 'Technical Vice President'
     },
     {
         id: 8,
