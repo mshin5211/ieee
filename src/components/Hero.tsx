@@ -49,7 +49,10 @@ const Hero = () => {
                         </button>
                     </Link>
                     <a>
-                        <button onClick={() => setShowModal(true)}className="bg-[#0455A4] focus:ring-1 ring-white border border-white/[0.7] bg-opacity-80 backdrop-blur-sm hover:bg-blue-500 hover:bg-opacity-100 text-white font-bold py-2 px-4 rounded-md">
+                        {/* <button onClick={() => setShowModal(true)}className="bg-[#0455A4] focus:ring-1 ring-white border border-white/[0.7] bg-opacity-80 backdrop-blur-sm hover:bg-blue-500 hover:bg-opacity-100 text-white font-bold py-2 px-4 rounded-md">
+                            Join Us
+                        </button> */}
+                        <button onClick={() => window.open("https://discord.gg/Nnqw3yCav7", "_blank")} className='bg-[#0455A4] focus:ring-1 ring-white border border-white/[0.7] bg-opacity-80 backdrop-blur-sm hover:bg-blue-500 hover:bg-opacity-100 text-white font-bold py-2 px-4 rounded-md'>
                             Join Us
                         </button>
                     </a>
