@@ -91,7 +91,7 @@ export const MobileNav = ({
             >
             About
             </Link>
-            <Link href='/leadership'
+            <Link onClick={() => setIsOpened(false)} href='/leadership'
             className={`cursor-pointer ${isMembersActive ? 'font-bold' : 'font-normal'} text-white dark:text-white hover:opacity-[0.9]`}
             >
             Leadership
