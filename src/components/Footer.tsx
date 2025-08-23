@@ -42,7 +42,7 @@ const Footer = () => {
         </div>
         
         <p className='text-xs md:text-sm'>
-            © 2024 IEEE at the University of Illinois
+            © 2025 IEEE at the University of Illinois
         </p>
         
     </footer>
