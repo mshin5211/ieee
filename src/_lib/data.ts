@@ -141,7 +141,7 @@ export const administration_data = [
     {
         id: 2,
         name: "Max Mamishev",
-        src: '/Max_Mamishev_25.jpeg',
+        src: '/Max_Mamishev_25.png',
         description: '',
         href: 'https://www.linkedin.com/in/maxwell-mamishev-35b554212',
         role: 'Professional Vice President',
@@ -149,7 +149,7 @@ export const administration_data = [
     {
         id: 4,
         name: "Aryan Gupta",
-        src: '/Aryan_Gupta_25.jpeg',
+        src: '/Aryan_Gupta_25.jpg',
         description: '',
         href: 'https://www.linkedin.com/in/aryan-gupta-uiuc/',
         role: 'Treasurer'
@@ -240,7 +240,7 @@ export const administration_data = [
         name: "Kevin Wang",
         src: '/Kevin_Wang_25.jpg',
         description: '',
-        href: 'https://www.linkedin.com/in/kevin-jiao-59077a32a/',
+        href: 'https://www.linkedin.com/in/24kewang',
         role: 'Membership Coordinator',
     },
     {
